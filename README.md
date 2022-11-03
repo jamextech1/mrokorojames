@@ -1,2 +1,1 @@
-# mrokorojames
-my version 3 portfolio
+## my version 3 portfolio
