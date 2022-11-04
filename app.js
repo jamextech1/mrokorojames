@@ -5,8 +5,24 @@ const show2 = document.querySelector(".contact_btn");
 // Social Profiles
 
 const openFacebook = document.querySelector(".fa-facebook");
+const openTwitter = document.querySelector(".fa-twitter");
+const openLinkedin = document.querySelector(".fa-linkedin");
+const openWhatsapp = document.querySelector(".fa-whatsapp");
+const openGithub = document.querySelector(".fa-github");
 openFacebook.addEventListener("click", function (e) {
   window.open("https://www.facebook.com/mrokorojames");
+});
+openTwitter.addEventListener("click", function (e) {
+  window.open("https://www.twitter.com/jamextech1");
+});
+openLinkedin.addEventListener("click", function (e) {
+  window.open("https://www.linkedin.com/in/okorojames");
+});
+openWhatsapp.addEventListener("click", function (e) {
+  window.open("bit.ly/okorojames");
+});
+openGithub.addEventListener("click", function (e) {
+  window.open("https://www.github.com/jamextech1");
 });
 
 //
