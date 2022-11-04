@@ -19,7 +19,7 @@ openLinkedin.addEventListener("click", function (e) {
   window.open("https://www.linkedin.com/in/okorojames");
 });
 openWhatsapp.addEventListener("click", function (e) {
-  window.open("bit.ly/okorojames");
+  window.open("https://bit.ly/okorojames");
 });
 openGithub.addEventListener("click", function (e) {
   window.open("https://www.github.com/jamextech1");
