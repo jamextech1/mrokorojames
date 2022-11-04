@@ -1,6 +1,17 @@
 const btn = document.querySelector(".hamburger");
 const show = document.querySelector(".nav_links");
 const show2 = document.querySelector(".contact_btn");
+//
+// Social Profiles
+
+const openFacebook = document.querySelector(".fa-facebook");
+openFacebook.addEventListener("click", function (e) {
+  window.open("https://www.facebook.com/mrokorojames");
+});
+
+//
+// End Social Profiles Functions
+
 btn.addEventListener("click", function (e) {
   e.preventDefault();
   alert(
