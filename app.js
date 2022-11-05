@@ -9,25 +9,30 @@ const openTwitter = document.querySelector(".fa-twitter");
 const openLinkedin = document.querySelector(".fa-linkedin");
 const openWhatsapp = document.querySelector(".fa-whatsapp");
 const openGithub = document.querySelector(".fa-github");
+const openInstagram = document.querySelector(".fa-instagram");
 openFacebook.addEventListener("click", function (e) {
   window.open("https://www.facebook.com/mrokorojames");
 });
+//
 openTwitter.addEventListener("click", function (e) {
   window.open("https://www.twitter.com/jamextech1");
 });
+//
 openLinkedin.addEventListener("click", function (e) {
   window.open("https://www.linkedin.com/in/okorojames");
 });
+//
 openWhatsapp.addEventListener("click", function (e) {
   window.open("https://bit.ly/okorojames");
 });
+//
 openGithub.addEventListener("click", function (e) {
   window.open("https://www.github.com/jamextech1");
 });
 
 //
 // End Social Profiles Functions
-
+//
 btn.addEventListener("click", function (e) {
   e.preventDefault();
   alert(
