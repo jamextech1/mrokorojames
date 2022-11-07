@@ -24,7 +24,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 19.2rem;
-  margin-bottom: 20rem;
   color: #343a40;
 }
 section {
@@ -609,6 +608,17 @@ nav li {
   opacity: 0;
 }
 
+/*  */
+/* FOOTER SECTION STYLING */
+.footer-section {
+  background-color: #836ee6;
+  width: 100%;
+  padding: 10rem 0;
+}
+.footer-section-content {
+  width: 85%;
+  margin: 0 auto;
+}
 /*  */
 /*  */
 /* MEDIA QUERIES */
