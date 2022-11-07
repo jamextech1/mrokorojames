@@ -667,7 +667,6 @@ nav li {
 }
 .chat-me-btn:link,
 .chat-me-btn:visited {
-  position: relative;
   display: inline-block;
   font-size: 1.2rem;
   font-weight: 600;
@@ -679,24 +678,6 @@ nav li {
   padding: 1.6rem 3.2rem;
   border-radius: 10rem;
 }
-.chat-me-btn::after {
-  display: inline-block;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  border-radius: 10rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -0.99;
-  transition: 0.6s ease-in-out;
-}
-.chat-me-btn:hover::after {
-  transform: scaleX(1.2) scaleY(1.4);
-  opacity: 0;
-}
-
 /*  */
 .footer-p-two {
   font-size: 1.8rem;
