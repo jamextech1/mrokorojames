@@ -619,6 +619,10 @@ nav li {
   width: 85%;
   margin: 0 auto;
 }
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 /*  */
 /*  */
 /* MEDIA QUERIES */
