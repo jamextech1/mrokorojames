@@ -645,6 +645,8 @@ nav li {
 }
 .footer-icons {
   font-size: 3rem;
+  text-decoration: none;
+  color: #fff;
 }
 .footer-col-2 {
   align-self: start;
