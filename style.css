@@ -640,7 +640,7 @@ nav li {
 }
 .footer-col-3 {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 }
 .footer-icons {
   font-size: 3rem;
@@ -655,6 +655,17 @@ nav li {
   text-decoration: none;
   font-size: 1.8rem;
   color: #fff;
+  letter-spacing: 0.15rem;
+}
+.footer-links:hover {
+  border-bottom: 0.2rem solid #fff;
+}
+.footer-p-two {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  margin-top: 5rem;
 }
 /*  */
 /*  */
