@@ -614,6 +614,7 @@ nav li {
   background-color: #836ee6;
   width: 100%;
   padding: 10rem 0;
+  color: #fff;
 }
 .footer-section-content {
   width: 85%;
@@ -622,6 +623,20 @@ nav li {
 .footer-cols {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.footer-h3 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+}
+.footer-p-one {
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 3.2rem;
 }
 /*  */
 /*  */
