@@ -611,6 +611,7 @@ nav li {
 /*  */
 /* FOOTER SECTION STYLING */
 .footer-section {
+  position: relative;
   background-color: #836ee6;
   width: 100%;
   padding: 10rem 0;
@@ -692,6 +693,14 @@ nav li {
 /* Back to top styling */
 .back-to-top-icon {
   font-size: 2.4rem;
+  background-color: #836ee6;
+  border-radius: 0.8rem;
+  padding: 0.8rem 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 0.2rem 0.4rem rgba(210, 203, 253, 0.5);
+  position: fixed;
+  right: 10%;
+  bottom: 30%;
 }
 /*  */
 /*  */
