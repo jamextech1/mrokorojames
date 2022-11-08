@@ -51,3 +51,8 @@ btn.addEventListener("click", function (e) {
   show.style.height = "30rem";
   show2.style.display = "block";
 });
+
+// scroll to top
+function scrollToTop() {
+  window.scrollTo(0, 0);
+}
