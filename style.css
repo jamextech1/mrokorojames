@@ -58,6 +58,7 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
+  transition: 0.3s ease-in-out;
 }
 .nav-links a {
   font-size: 1.8rem;
@@ -87,7 +88,8 @@ nav {
   font-size: 3.4rem;
   color: #7f69e0;
 }
-.toggler {
+.toggler,
+.toggler-close {
   display: none;
 }
 .toggle-close-img {
@@ -683,9 +685,8 @@ nav {
   cursor: pointer;
   box-shadow: 0 0.2rem 0.4rem rgba(210, 203, 253, 0.5);
   position: fixed;
-  right: 7%;
+  right: 2%;
   bottom: 12%;
-  z-index: 250;
 }
 /*  */
 /*  */
@@ -799,7 +800,7 @@ nav {
     flex-direction: column;
     background-color: #343a40;
     width: 100%;
-    left: 0;
+    left: -300%;
     top: 0;
     height: 100%;
     z-index: 100;
@@ -815,6 +816,10 @@ nav {
   }
   .toggler {
     display: block;
+  }
+  .toggler,
+  .hamburger-close {
+    cursor: pointer;
   }
   .toggler-close {
     width: 80%;

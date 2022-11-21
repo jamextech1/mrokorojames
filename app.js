@@ -1,6 +1,14 @@
 const btn = document.querySelector(".hamburger");
-const show = document.querySelector(".nav_links");
-const show2 = document.querySelector(".contact_btn");
+const btn2 = document.querySelector(".nav-links");
+const btn3 = document.querySelector(".hamburger-close");
+btn.addEventListener("click", function () {
+  btn2.style.left = "0";
+});
+
+// nav close
+btn3.addEventListener("click", function () {
+  btn2.style.left = "-300%";
+});
 //
 // Social Profiles
 
