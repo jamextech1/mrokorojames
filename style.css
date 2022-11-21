@@ -102,19 +102,6 @@ nav li {
 }
 
 /* hamburger */
-.hamburger {
-  cursor: pointer;
-  display: none;
-}
-.burger {
-  height: 0.4rem;
-  width: 3rem;
-  background-color: rgb(131, 110, 230);
-  margin-bottom: 0.5rem;
-}
-.burger:last-child {
-  margin-bottom: 0;
-}
 
 /* SECTION ONE STYLING */
 .hero_section_cols {
