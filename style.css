@@ -317,6 +317,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6.4rem;
+  text-align: center;
 }
 .wid_section_h2 {
   font-family: "Rock Salt", cursive;
@@ -778,17 +779,27 @@ nav {
   .wid_section_h2 {
     margin-top: 10rem;
   }
+  .wid_section_col_one.first {
+    text-align: left;
+  }
   .wid_section_col_one.third {
     justify-self: start;
+    text-align: left;
   }
   .wid_section_col_one.fourth {
     justify-self: end;
+    text-align: right;
   }
   .wid_section_col_one.fifth {
     justify-self: start;
+    text-align: left;
   }
   .wid_section_col_one.second {
     justify-self: end;
+    text-align: right;
+  }
+  .wid_section_col_one.sixth {
+    text-align: right;
   }
 
   /* contact section */
@@ -879,7 +890,8 @@ nav {
   .wid_section_col_one.second,
   .wid_section_col_one.sixth,
   .wid_section_col_one.first {
-    justify-self: center;
+    justify-self: center !important;
+    text-align: center;
   }
 }
 @media screen and (max-width: 376px) {
