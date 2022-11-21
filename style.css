@@ -8,6 +8,9 @@ FONT SIZE SYSTEM (px)
 /* COLORS: #343a40 #314163  #fafafa #836EE6 #9989FA */
 
 /* GENERAL STYLING */
+:root {
+  --main-color: #836ee6;
+}
 *,
 *::after,
 *::before {
@@ -35,7 +38,45 @@ img {
   width: 100%;
 }
 /* NAV STYLING */
-
+nav {
+  max-width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.nav-logo {
+  width: 4rem;
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  text-decoration: none;
+  color: var(--main-color);
+}
+.nav-links a:hover {
+  background-color: rgba(152, 137, 250, 0.11);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.8rem;
+}
+.nav-ctn-active {
+  background-color: var(--main-color);
+  color: #fff !important;
+  padding: 0.6rem 1.2rem !important;
+  border-radius: 0.8rem;
+  margin-left: 3.5rem;
+}
+.nav-ctn-active:hover {
+  background-color: #7f69e0 !important;
+}
 /* SECTION ONE STYLING */
 .hero_section_cols {
   display: grid;
@@ -731,13 +772,7 @@ img {
 
 /* smaller screen */
 @media screen and (max-width: 630px) {
-  .nav_links {
+  .nav-links {
     display: none;
-  }
-  .contact_btn {
-    display: none;
-  }
-  .hamburger {
-    display: block;
   }
 }
