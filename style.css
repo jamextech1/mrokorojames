@@ -683,11 +683,11 @@ nav {
   font-size: 2.4rem;
   background-color: #836ee6;
   border-radius: 0.8rem;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 0.9rem;
   cursor: pointer;
   box-shadow: 0 0.2rem 0.4rem rgba(210, 203, 253, 0.5);
   position: fixed;
-  right: 2%;
+  right: 1.5%;
   bottom: 12%;
 }
 /*  */
@@ -813,6 +813,14 @@ nav {
     color: #fff;
     font-size: 2.4rem;
   }
+  .nav-links a:hover {
+    color: var(--main-color);
+    padding: 0;
+    background: none;
+  }
+  .nav-ctn-active:hover {
+    background-color: #7f69e0;
+  }
   .nav-ctn-active {
     margin-left: 0;
   }
@@ -831,5 +839,23 @@ nav {
     gap: 100%;
     margin-bottom: 25%;
     margin-top: -12%;
+  }
+  /* footer mobile styling */
+  .footer-section {
+    text-align: center;
+  }
+  .footer-cols {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .footer-col-2 {
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+  .footer-col-3 {
+    margin-bottom: 3rem;
+  }
+  .footer-p-two {
+    margin-top: 4.5rem;
   }
 }
