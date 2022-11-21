@@ -162,7 +162,7 @@ nav {
 .hero_section_p_three {
   font-size: 1.8rem;
   text-transform: capitalize;
-  font-weight: 500;
+  font-weight: 400;
   opacity: 85%;
 }
 .hero_section_hireme_btn:link,
@@ -265,7 +265,7 @@ nav {
 .about_section_context_p_two {
   opacity: 95%;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.15rem;
   line-height: 1.5;
 }
@@ -344,7 +344,7 @@ nav {
 }
 .wid_section_p_one {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 2rem;
   opacity: 90%;
 }
@@ -369,6 +369,9 @@ nav {
 }
 
 /* SKILLS SECTION STYLING */
+.skills_section {
+  text-align: center;
+}
 .skills_section_h3 {
   text-align: center;
   font-size: 4.4rem;
@@ -857,5 +860,30 @@ nav {
   }
   .footer-p-two {
     margin-top: 4.5rem;
+  }
+  /* skills section */
+  .skills_section_cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+  /* what i do sections */
+  .wid_section {
+    text-align: center;
+  }
+  .wid_section_cols {
+    grid-template-columns: 1fr;
+  }
+  .wid_section_col_one.third,
+  .wid_section_col_one.fifth,
+  .wid_section_col_one.fourth,
+  .wid_section_col_one.second,
+  .wid_section_col_one.sixth,
+  .wid_section_col_one.first {
+    justify-self: center;
+  }
+}
+@media screen and (max-width: 376px) {
+  .skills_section_cols {
+    grid-template-columns: 1fr;
   }
 }
