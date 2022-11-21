@@ -8,6 +8,7 @@ FONT SIZE SYSTEM (px)
 /* COLORS: #343a40 #314163  #fafafa #836EE6 #9989FA */
 
 /* GENERAL STYLING */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 :root {
   --main-color: #836ee6;
 }
@@ -24,7 +25,7 @@ html {
 }
 body {
   overflow-x: hidden;
-  font-family: "Montserrat";
+  font-family: "Rubik", sans-serif;
   display: flex;
   flex-direction: column;
   gap: 19.2rem;
