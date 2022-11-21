@@ -1,6 +1,7 @@
 const btn = document.querySelector(".hamburger");
 const btn2 = document.querySelector(".nav-links");
 const btn3 = document.querySelector(".hamburger-close");
+const btn4 = document.querySelectorAll(".nav-links a");
 btn.addEventListener("click", function () {
   btn2.style.left = "0";
 });
@@ -8,6 +9,12 @@ btn.addEventListener("click", function () {
 // nav close
 btn3.addEventListener("click", function () {
   btn2.style.left = "-300%";
+});
+
+btn4.forEach((links) => {
+  links.addEventListener("click", function () {
+    btn2.style.left = "-300%";
+  });
 });
 //
 // Social Profiles
