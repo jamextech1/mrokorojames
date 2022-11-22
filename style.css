@@ -394,6 +394,9 @@ nav {
   width: 5rem;
   height: 5rem;
 }
+.github-skill {
+  grid-column: 2/3;
+}
 .skill_svg.react {
   color: rgb(0, 204, 255);
 }
