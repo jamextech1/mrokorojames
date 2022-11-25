@@ -689,6 +689,7 @@ nav {
 .back-to-top-icon {
   font-size: 2.4rem;
   background-color: #836ee6;
+  color: #fff;
   border-radius: 0.8rem;
   padding: 0.8rem 0.9rem;
   cursor: pointer;
