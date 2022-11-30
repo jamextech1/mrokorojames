@@ -23,7 +23,7 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 body {
   overflow-x: hidden;
@@ -33,9 +33,11 @@ body {
   gap: 19.2rem;
   color: #343a40;
 }
+
 section {
   width: 85%;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 img {
   width: 100%;
