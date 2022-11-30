@@ -23,7 +23,9 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
 body {
   overflow-x: hidden;
   font-family: "Rubik", sans-serif;
@@ -800,9 +802,9 @@ nav {
     width: 100%;
     left: -300%;
     top: 0;
-    height: 100%;
+    height: 100vh;
     z-index: 100;
-    gap: 3rem;
+    gap: 2.5rem;
     justify-content: center;
   }
   .nav-links a {
