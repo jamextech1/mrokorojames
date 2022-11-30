@@ -437,6 +437,11 @@ nav {
   border-radius: 1.5rem;
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.308);
   padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+.project:hover .project-h3 {
+  transition: all 0.3s ease;
+  color: rgb(250, 69, 3);
 }
 .project-img {
   margin-bottom: 1.5rem;
@@ -449,6 +454,27 @@ nav {
 .project-card-paragraph {
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
+}
+.project-strong-text {
+  font-weight: 500;
+  color: var(--main-color);
+}
+.project-btn:link,
+.project-btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--main-color);
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+}
+.project-btn:hover,
+.project-btn:active {
+  transition: all 0.25s ease;
+  color: var(--main-color);
+  background-color: #fff;
+  box-shadow: 0 0 0 0.15rem var(--main-color);
 }
 /*  */
 /*  */
