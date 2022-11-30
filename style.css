@@ -685,11 +685,13 @@ nav {
   }
 }
 
+/*******************/
 /* SMALLER SCREEN */
 @media screen and (max-width: 650px) {
   html {
     font-size: 48.5%;
   }
+  /******************************/
   /* Hero section medi queries */
   .hero_section_col2 {
     grid-template-columns: 1fr;
@@ -874,8 +876,22 @@ nav {
     text-align: center;
   }
 }
+/*************************************/
+/* BOOTSTRAP MEDIUM FOR MY PROJECTS */
+/***********************************/
+@media screen and (max-width: 768px) {
+  .project-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media screen and (max-width: 376px) {
   .skills_section_cols {
     grid-template-columns: 1fr;
+  }
+  .project-cols {
+    grid-template-columns: 1fr;
+  }
+  .project {
+    width: 65%;
   }
 }
