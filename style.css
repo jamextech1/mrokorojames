@@ -23,7 +23,7 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 body {
   overflow-x: hidden;
@@ -37,7 +37,6 @@ body {
 section {
   width: 85%;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 img {
   width: 100%;
@@ -431,7 +430,8 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
+  padding: 1rem 2rem;
 }
 .project {
   border-radius: 1.5rem;
