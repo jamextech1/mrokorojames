@@ -412,7 +412,44 @@ nav {
 }
 
 /* PROJECT SECTION STYLING */
-
+.project-first-context {
+  text-align: center;
+  margin-bottom: 8rem;
+}
+.projects-h2 {
+  font-size: 4.4rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.project-first-paragraph {
+  font-size: 2.4rem;
+  font-weight: 300;
+  opacity: 0.7;
+}
+.project-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 3rem;
+}
+.project {
+  border-radius: 1.5rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.308);
+  padding: 1rem 1.5rem;
+}
+.project-img {
+  margin-bottom: 1.5rem;
+}
+.project-h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.project-card-paragraph {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
 /*  */
 /*  */
 /* CONTACT SECTION STYLING */
