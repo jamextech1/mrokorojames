@@ -23,9 +23,9 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 body {
+  overflow-x: hidden;
   font-family: "Rubik", sans-serif;
   display: flex;
   flex-direction: column;
@@ -834,7 +834,7 @@ nav {
     justify-content: center;
     gap: 100%;
     margin-bottom: 20%;
-    margin-top: -50%;
+    margin-top: -45%;
   }
   /* footer mobile styling */
   .footer-section {
