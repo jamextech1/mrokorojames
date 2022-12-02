@@ -833,7 +833,7 @@ nav {
     justify-content: center;
     gap: 100%;
     margin-bottom: 20%;
-    margin-top: -20%;
+    margin-top: -35%;
   }
   /* footer mobile styling */
   .footer-section {
@@ -892,23 +892,5 @@ nav {
   }
   .project {
     width: 65%;
-  }
-  .toggler-close{
-    margin-top: -45% !important;
-  }
-}
-@media screen and (max-width: 576px){
-  .toggler-close{
-    margin-top: -25%;
-  }
-}
-@media screen and (max-width: 470px){
-  .toggler-close{
-    margin-top: -30%;
-  }
-}
-@media screen and (max-width: 276px){
-  .toggler-close{
-    margin-top: -80% !important;
   }
 }
