@@ -23,7 +23,6 @@ FONT SIZE SYSTEM (px)
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 body {
   overflow-x: hidden;
