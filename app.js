@@ -30,7 +30,7 @@ openFacebook.addEventListener("click", function (e) {
 });
 //
 openTwitter.addEventListener("click", function (e) {
-  window.open("https://www.twitter.com/jamextech1");
+  window.open("https://www.twitter.com/okorojames_");
 });
 //
 openLinkedin.addEventListener("click", function (e) {
@@ -42,7 +42,7 @@ openWhatsapp.addEventListener("click", function (e) {
 });
 //
 openGithub.addEventListener("click", function (e) {
-  window.open("https://www.github.com/jamextech1");
+  window.open("https://www.github.com/okorojames");
 });
 
 //
