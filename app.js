@@ -52,3 +52,13 @@ openGithub.addEventListener("click", function (e) {
 function scrollToTop() {
   window.scrollTo(0, 0);
 }
+
+/*==============*/
+/*TYPED JS CODE*/
+/*============*/
+let typed = new Typed(".typing-effect", {
+  strings: ["", "Web Developer", "Software Developer"],
+  backSpeed: "9",
+  typeSpeed: "9",
+  loop: true,
+});
