@@ -123,6 +123,20 @@ nav {
   font-size: 2.4rem;
   cursor: pointer;
 }
+.fa-brands,
+.fa-regular,
+.fab,
+.fas,
+.far {
+  transition: all 0.6s ease-in-out;
+}
+.fa-brands:hover,
+.fa-regular:hover,
+.fab:hover,
+.fas:hover,
+.far:hover {
+  transform: scale(1.13);
+}
 /* hero section context */
 .hero_section_context {
   display: flex;
@@ -661,6 +675,7 @@ nav {
 /*  */
 /* Back to top styling */
 .back-to-top-icon {
+  display: none;
   font-size: 2.4rem;
   background-color: #836ee6;
   color: #fff;
