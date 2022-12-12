@@ -2,6 +2,7 @@ const btn = document.querySelector(".hamburger");
 const btn2 = document.querySelector(".nav-links");
 const btn3 = document.querySelector(".hamburger-close");
 const btn4 = document.querySelectorAll(".nav-links a");
+const navWrap = document.querySelector(".nav-wrap");
 btn.addEventListener("click", function () {
   btn2.style.left = "0";
 });
@@ -60,8 +61,12 @@ window.onscroll = function () {
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     mybutton.style.display = "block";
+    // adding navwrap background
+    navWrap.classList.add("bg-increment");
   } else {
     mybutton.style.display = "none";
+    // removing navWrap bacground
+    navWrap.classList.remove("bg-increment");
   }
 }
 

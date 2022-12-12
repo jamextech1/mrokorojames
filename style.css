@@ -42,12 +42,14 @@ img {
 }
 /* NAV STYLING */
 .nav-wrap {
-  background-color: rgba(152, 137, 250, 0.03);
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 99999;
+}
+.bg-increment {
+  background-color: rgba(11, 8, 29, 0.356);
 }
 nav {
   position: relative;
