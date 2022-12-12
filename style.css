@@ -47,6 +47,7 @@ img {
   top: 0;
   width: 100%;
   z-index: 99999;
+  transition: all 0.8s ease-in-out;
 }
 .bg-increment {
   background-color: rgba(11, 8, 29, 0.356);
