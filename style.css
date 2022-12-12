@@ -43,6 +43,11 @@ img {
 /* NAV STYLING */
 .nav-wrap {
   background-color: rgba(152, 137, 250, 0.03);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99999;
 }
 nav {
   position: relative;
@@ -69,6 +74,7 @@ nav {
   padding: 0 1rem;
   text-decoration: none;
   color: var(--main-color);
+  transition: all 0.5s ease-in-out;
 }
 .nav-links a:hover {
   background-color: rgba(152, 137, 250, 0.11);
@@ -815,7 +821,7 @@ nav {
     left: -300%;
     top: 0;
     height: 100%;
-    z-index: 100;
+    z-index: 9999;
     gap: 2.5rem;
     justify-content: center;
   }
