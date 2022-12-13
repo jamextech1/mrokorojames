@@ -85,3 +85,11 @@ let typed = new Typed(".typing-effect", {
   typeSpeed: "9",
   loop: true,
 });
+
+/*==============*/
+/*PRELOADER JS CODE*/
+/*============*/
+$(window).on("load", function () {
+  $(".preloader-status").delay(1000).fadeOut();
+  $(".preloader").delay(1200).fadeOut();
+});

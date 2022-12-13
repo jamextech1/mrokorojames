@@ -40,6 +40,32 @@ section {
 img {
   width: 100%;
 }
+/*  */
+/*  */
+/* PRELOADER STYLING */
+.preloader {
+  position: fixed;
+  background-color: rgb(243, 241, 241);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+}
+.preloader-status {
+  background: url(images/pageLoad.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80px;
+  width: 90px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*  */
+/*  */
 /* NAV STYLING */
 .nav-wrap {
   position: fixed;
