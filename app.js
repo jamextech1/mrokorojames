@@ -90,6 +90,6 @@ let typed = new Typed(".typing-effect", {
 /*PRELOADER JS CODE*/
 /*============*/
 $(window).on("load", function () {
-  $(".preloader-status").delay(1000).fadeOut();
-  $(".preloader").delay(1200).fadeOut();
+  $(".preloader-status").delay(800).fadeOut();
+  $(".preloader").delay(900).fadeOut();
 });
