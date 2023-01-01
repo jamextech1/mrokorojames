@@ -3,6 +3,12 @@ const btn2 = document.querySelector(".nav-links");
 const btn3 = document.querySelector(".hamburger-close");
 const btn4 = document.querySelectorAll(".nav-links a");
 const navWrap = document.querySelector(".nav-wrap");
+const navLogo = document.querySelector(".nav-logo");
+navLogo.addEventListener("click", myLogo);
+function myLogo() {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
 btn.addEventListener("click", function () {
   btn2.style.left = "0";
 });
