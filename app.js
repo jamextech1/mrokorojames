@@ -102,4 +102,24 @@ $(window).on("load", function () {
 /*=========================*/
 /*DARK MODE AND LIGHT MODE*/
 /*=======================*/
-const modeIcon = document.querySelectorAll(".mode-icon");
+const darkMode = document.querySelector(".dark--mode");
+const lightMode = document.querySelector(".light--mode");
+const bodyTag = document.querySelector("body");
+//
+// DARK MODE
+//
+darkMode.addEventListener("click", function () {
+  darkMode.style = "display: none";
+  lightMode.style = "display: block";
+  bodyTag.style.backgroundColor = "#212529";
+  bodyTag.style.color = "#f8f9fa";
+});
+//
+// LIGHT MODE
+//
+lightMode.addEventListener("click", function () {
+  darkMode.style = "display: block";
+  lightMode.style = "display: none";
+  bodyTag.style.backgroundColor = "#f8f9fa";
+  bodyTag.style.color = "#212529";
+});
