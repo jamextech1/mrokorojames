@@ -99,3 +99,7 @@ $(window).on("load", function () {
   $(".preloader-status").delay(800).fadeOut();
   $(".preloader").delay(900).fadeOut();
 });
+/*=========================*/
+/*DARK MODE AND LIGHT MODE*/
+/*=======================*/
+const modeIcon = document.querySelectorAll(".mode-icon");

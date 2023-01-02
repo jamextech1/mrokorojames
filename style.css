@@ -138,6 +138,22 @@ nav {
   font-size: 4rem;
   color: #fff;
 }
+/*  */
+/* mode icons */
+/*  */
+.darkandlight {
+  padding: 0 2.5rem;
+}
+.mode-icon {
+  height: 24px;
+  width: 24px;
+  stroke: var(--main-color);
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+.light--mode {
+  display: none;
+}
 /* SECTION ONE STYLING */
 .hero_section_cols {
   display: grid;
