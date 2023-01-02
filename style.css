@@ -864,8 +864,6 @@ nav {
 
 /* smaller screen */
 @media screen and (max-width: 630px) {
-  .darkandlight {
-  }
   .nav-links {
     text-align: center;
     position: fixed;
