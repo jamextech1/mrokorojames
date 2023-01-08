@@ -96,8 +96,8 @@ let typed = new Typed(".typing-effect", {
 /*PRELOADER JS CODE*/
 /*============*/
 $(window).on("load", function () {
-  $(".preloader-status").delay(800).fadeOut();
-  $(".preloader").delay(900).fadeOut();
+  $(".preloader-status").delay(400).fadeOut();
+  $(".preloader").delay(500).fadeOut();
 });
 /*=========================*/
 /*DARK MODE AND LIGHT MODE*/
