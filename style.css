@@ -144,16 +144,18 @@ nav {
 /*  */
 /*  */
 .mode-icon {
-  height: 24px;
-  width: 24px;
+  height: 26px;
+  width: 26px;
   stroke: var(--main-color);
   cursor: pointer;
   transition: all 1s ease-in-out;
+  margin-left: -3px;
 }
 .light--mode {
   display: none;
   height: 28px;
   width: 28px;
+  margin-top: -15px;
 }
 
 /* SECTION ONE STYLING */
