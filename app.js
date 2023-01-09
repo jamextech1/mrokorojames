@@ -124,3 +124,13 @@ lightMode.addEventListener("click", function () {
   bodyTag.style.color = "#212529";
 });
 //
+// PROJECTS SLIDER FUNCTION
+// 
+$(document).ready(function(){
+  $('.project-cols').slick({
+     autoplay: true,
+     infinite: true,
+     slidesToShow: 3,
+     slidesToScroll: 1
+  });
+});
