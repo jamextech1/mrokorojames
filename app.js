@@ -120,7 +120,7 @@ darkMode.addEventListener("click", function () {
 lightMode.addEventListener("click", function () {
   darkMode.style = "display: block";
   lightMode.style = "display: none";
-  bodyTag.style.backgroundColor = "#f8f9fa";
+  bodyTag.style.backgroundColor = "#fff";
   bodyTag.style.color = "#212529";
 });
 //
