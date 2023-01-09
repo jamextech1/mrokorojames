@@ -62,6 +62,7 @@ let mybutton = document.querySelector(".back-to-top-icon");
 // When the user scrolls down 80px from the top of the document, show the button
 window.onscroll = function () {
   scrollFunction();
+  lightDark();
 };
 
 function scrollFunction() {
@@ -105,6 +106,7 @@ $(window).on("load", function () {
 const darkMode = document.querySelector(".dark--mode");
 const lightMode = document.querySelector(".light--mode");
 const bodyTag = document.querySelector("body");
+
 //
 // DARK MODE
 //
@@ -124,4 +126,4 @@ lightMode.addEventListener("click", function () {
   bodyTag.style.color = "#212529";
 });
 //
-//
+
