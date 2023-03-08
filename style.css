@@ -749,8 +749,14 @@ nav {
 /*  */
 /* MEDIA QUERIES */
 /*  */
+@media screen and (max-width: 990px) {
+  .project-cols{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 /*  */
 @media screen and (max-width: 850px) {
+
   html {
     font-size: 52.5%;
   }
@@ -955,14 +961,19 @@ nav {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media screen and (max-width: 476px) {
+    .project-cols {
+    grid-template-columns: 1fr;
+  }
+    .project {
+    width: 65%;
+  }
+}
 @media screen and (max-width: 376px) {
   .skills_section_cols {
     grid-template-columns: 1fr;
   }
-  .project-cols {
-    grid-template-columns: 1fr;
-  }
-  .project {
-    width: 65%;
+    .project {
+    width: 85%;
   }
 }
