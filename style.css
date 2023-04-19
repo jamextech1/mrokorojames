@@ -33,6 +33,14 @@ body {
   color: #343a40;
   transition: all 0.5s ease-in-out;
 }
+body::-webkit-scrollbar {
+  width: 0.8rem;
+  background: rgba(196, 196, 198, 0.342);
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10rem;
+  background: #7f69e0;
+}
 
 section {
   width: 85%;
@@ -507,7 +515,6 @@ nav {
   box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.308);
   padding: 1rem 1.5rem;
   cursor: pointer;
-
 }
 .project:hover .project-h3 {
   transition: all 0.3s ease;
@@ -750,13 +757,12 @@ nav {
 /* MEDIA QUERIES */
 /*  */
 @media screen and (max-width: 990px) {
-  .project-cols{
+  .project-cols {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 /*  */
 @media screen and (max-width: 850px) {
-
   html {
     font-size: 52.5%;
   }
@@ -962,10 +968,10 @@ nav {
   }
 }
 @media screen and (max-width: 476px) {
-    .project-cols {
+  .project-cols {
     grid-template-columns: 1fr;
   }
-    .project {
+  .project {
     width: 65%;
   }
 }
@@ -973,7 +979,7 @@ nav {
   .skills_section_cols {
     grid-template-columns: 1fr;
   }
-    .project {
+  .project {
     width: 85%;
   }
 }
