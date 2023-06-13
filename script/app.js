@@ -107,7 +107,6 @@ const projects = [
 //
 //code for handling the displaying projects
 const allProjects = document.querySelector(".projects__second__row");
-console.log(projects);
 projects.map((project) => {
   allProjects.innerHTML += `
   
@@ -132,3 +131,16 @@ let typed = new Typed(".typing-effect", {
   typeSpeed: "9",
   loop: true,
 });
+/*==============*/
+/*NAVBAR TOGGLE CODE*/
+/*============*/
+const navLinks = document.querySelector(".nav__logo__links");
+const toggler = document.querySelector(".hamburger");
+const toggler_div = document.querySelectorAll(".burger");
+const toggleNav = (e) => {
+  toggler_div.forEach((togglerDiv) => {
+    togglerDiv.classList.toggle("nav__toggle");
+  });
+  navLinks.classList.toggle("nav__toggle");
+};
+toggler.addEventListener("click", toggleNav);

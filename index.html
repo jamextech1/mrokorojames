@@ -41,10 +41,10 @@
       <!--  -->
       <!-- nav bar -->
       <nav>
+        <a href="#">
+          <img src="images/logo.png" class="nav__logo" />
+        </a>
         <div class="nav__logo__links">
-          <a href="#">
-            <img src="images/logo.png" class="nav__logo" />
-          </a>
           <div class="nav__links">
             <a href="#home" class="nav__link">Home</a>
             <a href="#about" class="nav__link">About</a>
@@ -56,10 +56,15 @@
               >Say hello!</a
             >
           </div>
+          <a class="nav__btn" href="my-cv/my-cv.pdf" download="my-cv"
+            >Download CV</a
+          >
         </div>
-        <a class="nav__btn" href="my-cv/my-cv.pdf" download="my-cv"
-          >Download CV</a
-        >
+        <div class="hamburger">
+          <div class="burger burger__one"></div>
+          <div class="burger burger__two"></div>
+          <div class="burger burger__three"></div>
+        </div>
       </nav>
       <!--  -->
       <!-- hero section -->
@@ -119,7 +124,7 @@
           </p>
         </div>
       </div>
-      <img src="images/port_img_1.png" alt="" />
+      <img src="images/port_img_1.png" class="about__Section__img" alt="" />
     </section>
     <!--  -->
     <!-- Services Section -->
@@ -287,6 +292,13 @@
           </div>
           <!--  -->
         </div>
+        <!--  -->
+        <p class="copyright">
+          copyright &copy; JamexTech
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+        </p>
       </section>
     </div>
     <!--  -->
