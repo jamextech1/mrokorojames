@@ -107,7 +107,6 @@ const projects = [
 //
 //code for handling the displaying projects
 const allProjects = document.querySelector(".projects__second__row");
-console.log(projects);
 projects.map((project) => {
   allProjects.innerHTML += `
   
@@ -116,7 +115,7 @@ projects.map((project) => {
   <div class="project__context">
   <div class="project__title text-danger">${project.projectsTitle}</div>
   <div class="project__desc text-secondary">${project.projectDesc}</div>
-  <a class="project__link bg-danger" href=${project.projectLink}>Live Preview</a>
+  <a class="project__link bg-danger" target="_blank" href=${project.projectLink}>Live Preview</a>
   </div>
   </div>
   
@@ -131,4 +130,33 @@ let typed = new Typed(".typing-effect", {
   backSpeed: "9",
   typeSpeed: "9",
   loop: true,
+});
+/*==============*/
+/*NAVBAR TOGGLE CODE*/
+/*============*/
+const navLinks = document.querySelector(".nav__logo__links");
+const toggler = document.querySelector(".hamburger");
+const toggler_div = document.querySelectorAll(".burger");
+const toggleNav = (e) => {
+  toggler_div.forEach((togglerDiv) => {
+    togglerDiv.classList.toggle("nav__toggle");
+  });
+  navLinks.classList.toggle("nav__toggle");
+};
+toggler.addEventListener("click", toggleNav);
+/*==============*/
+/*BACK TO TOP BTN CODE*/
+/*============*/
+const to__top__btn = document.querySelector(".back__to__top");
+to__top__btn.addEventListener("click", () => {
+  scrollTo(0, 0);
+});
+//
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 380) {
+    to__top__btn.classList.add("toggle__back__to__top");
+  } else if (window.scrollY < 380) {
+    to__top__btn.classList.remove("toggle__back__to__top");
+  }
 });
