@@ -156,6 +156,7 @@ let typed = new Typed(".typing-effect", {
 const navLinks = document.querySelector(".nav__logo__links");
 const toggler = document.querySelector(".hamburger");
 const toggler_div = document.querySelectorAll(".burger");
+const nav__link = document.querySelectorAll(".nav__link");
 const toggleNav = (e) => {
   toggler_div.forEach((togglerDiv) => {
     togglerDiv.classList.toggle("nav__toggle");
@@ -163,6 +164,14 @@ const toggleNav = (e) => {
   navLinks.classList.toggle("nav__toggle");
 };
 toggler.addEventListener("click", toggleNav);
+nav__link.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    navLinks.classList.remove("nav__toggle");
+    toggler_div.forEach((togglerDiv) => {
+      togglerDiv.classList.toggle("nav__toggle");
+    });
+  });
+});
 /*==============*/
 /*BACK TO TOP BTN CODE*/
 /*============*/
