@@ -168,7 +168,7 @@ nav__link.forEach((navLink) => {
   navLink.addEventListener("click", () => {
     navLinks.classList.remove("nav__toggle");
     toggler_div.forEach((togglerDiv) => {
-      togglerDiv.classList.toggle("nav__toggle");
+      togglerDiv.classList.remove("nav__toggle");
     });
   });
 });
