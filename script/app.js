@@ -115,7 +115,7 @@ projects.map((project) => {
   <div class="project__context">
   <div class="project__title text-danger">${project.projectsTitle}</div>
   <div class="project__desc text-secondary">${project.projectDesc}</div>
-  <a class="project__link bg-danger" href=${project.projectLink}>Live Preview</a>
+  <a class="project__link bg-danger" target="_blank" href=${project.projectLink}>Live Preview</a>
   </div>
   </div>
   
@@ -144,3 +144,19 @@ const toggleNav = (e) => {
   navLinks.classList.toggle("nav__toggle");
 };
 toggler.addEventListener("click", toggleNav);
+/*==============*/
+/*BACK TO TOP BTN CODE*/
+/*============*/
+const to__top__btn = document.querySelector(".back__to__top");
+to__top__btn.addEventListener("click", () => {
+  scrollTo(0, 0);
+});
+//
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 380) {
+    to__top__btn.classList.add("toggle__back__to__top");
+  } else if (window.scrollY < 380) {
+    to__top__btn.classList.remove("toggle__back__to__top");
+  }
+});

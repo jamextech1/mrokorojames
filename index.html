@@ -14,16 +14,6 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-
-    <!-- fontawesome
-    ================================================== -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <!-- box icons
     ================================================== -->
     <link
@@ -40,32 +30,34 @@
     <main class="main__container">
       <!--  -->
       <!-- nav bar -->
-      <nav>
-        <a href="#">
-          <img src="images/logo.png" class="nav__logo" />
-        </a>
-        <div class="nav__logo__links">
-          <div class="nav__links">
-            <a href="#home" class="nav__link">Home</a>
-            <a href="#about" class="nav__link">About</a>
-            <a href="#services" class="nav__link">Services</a>
-            <a href="#works" class="nav__link">Works</a>
-            <a
-              href="mailto:okorojameschizaram@gmail.com?Subject=Hello, Mr James"
-              class="nav__link"
-              >Say hello!</a
+      <header>
+        <nav>
+          <a href="#">
+            <img src="images/logo.png" class="nav__logo" />
+          </a>
+          <div class="nav__logo__links">
+            <div class="nav__links">
+              <a href="#home" class="nav__link">Home</a>
+              <a href="#about" class="nav__link">About</a>
+              <a href="#services" class="nav__link">Services</a>
+              <a href="#works" class="nav__link">Works</a>
+              <a
+                href="mailto:okorojameschizaram@gmail.com?Subject=Hello, Mr James"
+                class="nav__link"
+                >Say hello!</a
+              >
+            </div>
+            <a class="nav__btn" href="my-cv/my-cv.pdf" download="my-cv"
+              >Download CV</a
             >
           </div>
-          <a class="nav__btn" href="my-cv/my-cv.pdf" download="my-cv"
-            >Download CV</a
-          >
-        </div>
-        <div class="hamburger">
-          <div class="burger burger__one"></div>
-          <div class="burger burger__two"></div>
-          <div class="burger burger__three"></div>
-        </div>
-      </nav>
+          <div class="hamburger">
+            <div class="burger burger__one"></div>
+            <div class="burger burger__two"></div>
+            <div class="burger burger__three"></div>
+          </div>
+        </nav>
+      </header>
       <!--  -->
       <!-- hero section -->
       <div class="hero__section">
@@ -301,6 +293,7 @@
         </p>
       </section>
     </div>
+    <i class="bx bx-chevron-up back__to__top"></i>
     <!--  -->
     <!-- jquery script
     ================================================== -->
