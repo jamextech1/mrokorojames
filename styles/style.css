@@ -25,7 +25,7 @@ img {
 body {
   font-family: "Gothic A1", sans-serif;
   font-size: 1.6rem;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   width: 0.4rem;
@@ -501,6 +501,12 @@ nav {
 @media screen and (max-width: 886px) {
   .hero__header__text {
     font-size: 4rem;
+  }
+  .hero__links {
+    padding-left: 4rem;
+  }
+  .hero__link {
+    font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 768px) {
