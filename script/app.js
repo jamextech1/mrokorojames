@@ -1,4 +1,13 @@
 const projects = [
+  // project 15
+  {
+    projectImg: `<img src="./images/project-15.png"/ class="projectImg">`,
+    projectsTitle: "Shopping Get Product",
+    projectDesc:
+      "Search and buy your favorite products here, this project is almost a full fledged website",
+    projectLink: "https://shopping-gpt.netlify.app/",
+  },
+
   // project 1
   {
     projectImg: `<img src="./images/project-12.jpg"/ class="projectImg">`,
@@ -114,7 +123,7 @@ projects.map((project) => {
   ${project.projectImg}
   <div class="project__context">
   <div class="project__title text-danger">${project.projectsTitle}</div>
-  <div class="project__desc text-secondary">${project.projectDesc}</div>
+  <div class="project__desc">${project.projectDesc}</div>
   <a class="project__link bg-danger" target="_blank" href=${project.projectLink}>Live Preview</a>
   </div>
   </div>
