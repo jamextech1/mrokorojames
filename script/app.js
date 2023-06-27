@@ -16,6 +16,16 @@ const projects = [
       "JNetflix is a movie website, that you can search and view the information of any movie you like, Built using ReactJs.",
     projectLink: "https://jnetflixmovie.netlify.app/",
   },
+
+  // project 16
+  {
+    projectImg: `<img src="./images/project-16.png"/ class="projectImg">`,
+    projectsTitle: "Employees Info",
+    projectDesc:
+      "This is a FullStack project built with ReactJs, NodeJs and ExpressJs, you can login, register, add employees information, logout, and even update and delete employees infos.",
+    projectLink: "https://get-employees-data.vercel.app/",
+  },
+
   // project 2
   {
     projectImg: `<img src="./images/project-14.png"/ class="projectImg">`,
