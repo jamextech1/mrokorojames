@@ -615,7 +615,8 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background: var(--dark-color);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(9px);
     color: var(--light-one-color);
     z-index: 999;
     transition: 0.4s ease-in-out;
@@ -631,7 +632,7 @@ nav {
   }
   .projects__second__row {
     overflow-y: hidden;
-    height: 748px;
+    height: 745px;
   }
   .show__more__btn {
     display: inline-block;
