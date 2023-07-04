@@ -1,44 +1,19 @@
 const projects = [
-  // project 15
+  // project 17
   {
-    projectImg: `<img src="./images/project-15.png"/ class="projectImg">`,
-    projectsTitle: "Shopping Get Product",
+    projectImg: `<img src="./images/project-17.png"/ class="projectImg">`,
+    projectsTitle: "Streamflix",
     projectDesc:
-      "Search and buy your favorite products here, this project is almost a full fledged website",
-    projectLink: "https://shopping-gpt.netlify.app/",
+      "A full fledged movie site, with authentication, Built with ExpressJs, NodeJs and ReactJs",
+    projectLink: "https://streamflix-app.vercel.app/",
   },
-
-  // project 1
+  // project 6
   {
-    projectImg: `<img src="./images/project-12.jpg"/ class="projectImg">`,
-    projectsTitle: "JNetflix",
+    projectImg: `<img src="./images/project-9.png"/ class="projectImg">`,
+    projectsTitle: "Dictionary Web App",
     projectDesc:
-      "JNetflix is a movie website, that you can search and view the information of any movie you like, Built using ReactJs.",
-    projectLink: "https://jnetflixmovie.netlify.app/",
-  },
-
-  // project 16
-  {
-    projectImg: `<img src="./images/project-16.png"/ class="projectImg">`,
-    projectsTitle: "Employees Info",
-    projectDesc:
-      "This is a FullStack project built with ReactJs, NodeJs and ExpressJs, you can login, register, add employees information, logout, and even update and delete employees infos.",
-    projectLink: "https://get-employees-data.vercel.app/",
-  },
-
-  // project 2
-  {
-    projectImg: `<img src="./images/project-14.png"/ class="projectImg">`,
-    projectsTitle: "Fintech",
-    projectDesc: "Fintech Landing single pageg website, built using ReactJs",
-    projectLink: "https://fintechapp.vercel.app/",
-  },
-  // project 3
-  {
-    projectImg: `<img src="./images/project-2.png"/ class="projectImg">`,
-    projectsTitle: "News Landing Page",
-    projectDesc: "News Landing Page built using html,css,and javascript",
-    projectLink: "https://james-news-landing-page-project.netlify.app/",
+      "With this website, you can search and know the meaning of any word.",
+    projectLink: "https://james-dictionary-web.netlify.app/",
   },
   // project 4
   {
@@ -55,13 +30,44 @@ const projects = [
       "With this website, you can search and locate and as well see the details of any country of your choice",
     projectLink: "https://dev-get-country.netlify.app/",
   },
-  // project 6
+  // project 15
   {
-    projectImg: `<img src="./images/project-9.png"/ class="projectImg">`,
-    projectsTitle: "Dictionary Web App",
+    projectImg: `<img src="./images/project-15.png"/ class="projectImg">`,
+    projectsTitle: "Shopping Get Product",
     projectDesc:
-      "With this website, you can search and know the meaning of any word.",
-    projectLink: "https://james-dictionary-web.netlify.app/",
+      "Search and buy your favorite products here, this project is almost a full fledged website",
+    projectLink: "https://shopping-gpt.netlify.app/",
+  },
+  // project 16
+  {
+    projectImg: `<img src="./images/project-16.png"/ class="projectImg">`,
+    projectsTitle: "Employees Info",
+    projectDesc:
+      "This is a FullStack project built with ReactJs, NodeJs and ExpressJs, you can login, register, add employees information, logout, and even update and delete employees infos.",
+    projectLink: "https://get-employees-data.vercel.app/",
+  },
+
+  // project 2
+  {
+    projectImg: `<img src="./images/project-14.png"/ class="projectImg">`,
+    projectsTitle: "Fintech",
+    projectDesc: "Fintech Landing single pageg website, built using ReactJs",
+    projectLink: "https://fintechapp.vercel.app/",
+  },
+  // project 1
+  {
+    projectImg: `<img src="./images/project-12.jpg"/ class="projectImg">`,
+    projectsTitle: "JNetflix",
+    projectDesc:
+      "JNetflix is a movie website, that you can search and view the information of any movie you like, Built using ReactJs.",
+    projectLink: "https://jnetflixmovie.netlify.app/",
+  },
+  // project 3
+  {
+    projectImg: `<img src="./images/project-2.png"/ class="projectImg">`,
+    projectsTitle: "News Landing Page",
+    projectDesc: "News Landing Page built using html,css,and javascript",
+    projectLink: "https://james-news-landing-page-project.netlify.app/",
   },
   // project 7
   {
