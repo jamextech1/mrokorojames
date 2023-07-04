@@ -15,12 +15,27 @@ const projects = [
       "With this website, you can search and know the meaning of any word.",
     projectLink: "https://james-dictionary-web.netlify.app/",
   },
+  // project 2
+  {
+    projectImg: `<img src="./images/project-14.png"/ class="projectImg">`,
+    projectsTitle: "Fintech",
+    projectDesc: "Fintech Landing single pageg website, built using ReactJs",
+    projectLink: "https://fintechapp.vercel.app/",
+  },
   // project 4
   {
     projectImg: `<img src="./images/project-7.png"/ class="projectImg">`,
     projectsTitle: "Url Shortner",
     projectDesc: "This website helps you shorten your long url.",
     projectLink: "https://james-shortlify.netlify.app/",
+  },
+  // project 12
+  {
+    projectImg: `<img src="./images/project-10.jpg"/ class="projectImg">`,
+    projectsTitle: "Fintekk Landing Page",
+    projectDesc:
+      "This is Fintekk landing page website, diffrent from Fintech landing page webiste.",
+    projectLink: "https://jamex-fintekk-project.netlify.app/",
   },
   // project 5
   {
@@ -47,13 +62,6 @@ const projects = [
     projectLink: "https://get-employees-data.vercel.app/",
   },
 
-  // project 2
-  {
-    projectImg: `<img src="./images/project-14.png"/ class="projectImg">`,
-    projectsTitle: "Fintech",
-    projectDesc: "Fintech Landing single pageg website, built using ReactJs",
-    projectLink: "https://fintechapp.vercel.app/",
-  },
   // project 1
   {
     projectImg: `<img src="./images/project-12.jpg"/ class="projectImg">`,
@@ -106,14 +114,7 @@ const projects = [
       "This website updates you with news of different categories, giving you informations of various happenings in the world.",
     projectLink: "https://theprimenews.netlify.app/",
   },
-  // project 12
-  {
-    projectImg: `<img src="./images/project-10.jpg"/ class="projectImg">`,
-    projectsTitle: "Fintekk Landing Page",
-    projectDesc:
-      "This is Fintekk landing page website, diffrent from Fintech landing page webiste.",
-    projectLink: "https://jamex-fintekk-project.netlify.app/",
-  },
+
   // project 13
   {
     projectImg: `<img src="./images/project-13.jpg"/ class="projectImg">`,
