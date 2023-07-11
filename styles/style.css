@@ -615,8 +615,8 @@ nav {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(9px);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
     color: var(--light-one-color);
     z-index: 999;
     transition: 0.4s ease-in-out;
