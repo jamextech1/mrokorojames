@@ -633,14 +633,14 @@ nav {
   .projects__second__row {
     overflow-y: hidden;
     height: 745px;
-    transition: height 600ms ease-in-out;
+    transition: height 500ms ease-in-out;
   }
   .show__more__btn {
     display: inline-block;
   }
   .toggle__show__more.projects__second__row {
     height: 6388px;
-    transition: height 600ms ease-in-out;
+    transition: height 500ms ease-in-out;
   }
 }
 @media screen and (max-width: 576px) {
