@@ -151,9 +151,6 @@ projects.map((project) => {
 // show more projects function
 const show__more = document.querySelector(".show__more__btn");
 const showMoreProjects = () => {
-  if (!allProjects.className.includes("ghh")) {
-    console.log("nope");
-  }
   allProjects.classList.toggle("toggle__show__more");
   //
   // check for text
