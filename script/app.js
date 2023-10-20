@@ -7,6 +7,14 @@ const projects = [
       "A full fledged movie site, with authentication, Built with ExpressJs, NodeJs and ReactJs",
     projectLink: "https://streamflix-app.vercel.app/",
   },
+  // project 18
+  {
+    projectImg: `<img src="./images/project-18.png"/ class="projectImg">`,
+    projectsTitle: "Dashboard Kit Web-App",
+    projectDesc:
+      "Designed with TailwindCss,ReactJs,MaterialUi, ContextApi, Dashboard Kit is an elegent admin site management Site built with modern technologies, With Light and Dark Mode Feature",
+    projectLink: "https://james-dashboard-kit.vercel.app/",
+  },
   // project 6
   {
     projectImg: `<img src="./images/project-9.png"/ class="projectImg">`,
