@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  @apply w-[8px] bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-primary-100 rounded-full cursor-pointer;
+}
+
+body {
+  @apply bg-bgDark text-light-100 font-Calibre;
+}
