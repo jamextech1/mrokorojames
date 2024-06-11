@@ -10,8 +10,16 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  @apply selection:bg-light-200/15;
+}
+
 body::-webkit-scrollbar {
-  @apply w-[8px] bg-transparent;
+  @apply w-[7px] bg-transparent;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -20,4 +28,8 @@ body::-webkit-scrollbar-thumb {
 
 body {
   @apply bg-bgDark text-light-100 font-Calibre;
+}
+
+.section-container {
+  @apply w-[90%] sm:w-[89%] mx-auto;
 }

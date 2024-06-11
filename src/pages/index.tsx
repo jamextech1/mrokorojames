@@ -1,9 +1,22 @@
+import { FirstSection } from "@/components/hero-components/first-section";
+import { FourthSection } from "@/components/hero-components/fourth-section";
+import { SecondSection } from "@/components/hero-components/second-section";
+import { SocialHandles } from "@/components/hero-components/social-handles";
+import { ThirdSection } from "@/components/hero-components/third-section";
+
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24`}
-    >
-      Hello
+    <main className="relative px-8 md:px-12 mb-[50px]">
+      {/* first section */}
+      <FirstSection />
+      {/* second section */}
+      <SecondSection />
+      {/* third section */}
+      <ThirdSection />
+      {/*  */}
+      <FourthSection />
+      {/*  */}
+      <SocialHandles />
     </main>
   );
 }
