@@ -3,17 +3,24 @@ import { Truncate } from "@/utils/truncate";
 import { QueryObserverResult, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
 import Cookies from "js-cookie";
 import { Presence } from "@/utils/motion-exports";
 import { RxCross2 } from "react-icons/rx";
+import { useRouter, useSearchParams } from "next/navigation";
+import ReactPaginate from "react-paginate";
 
 const ProjectsPage = () => {
   const [showUpdate, setShowUpdate] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<any>(null);
+  //
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const page = searchParams.get("page") || 1;
+  const limit = searchParams.get("limit") || 6;
   //
   const {
     data: projects,
@@ -43,50 +50,75 @@ const ProjectsPage = () => {
     }
   };
   //
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    const params = new URLSearchParams();
+    const page = selected + 1;
+    params.append("page", page.toString());
+    router.push(`/projects?${params.toString()}`);
+  };
+  //
 
   return (
-    <div className="w-[95%] mx-auto relative mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-start gap-4 mb-8">
-      {loading && <p>Loading...</p>}
-      {projects &&
-        projects?.docs?.map((project: any) => (
-          <div key={project?._id}>
-            <div className="h-[250px] overflow-y-hidden">
-              <Image
-                src={`${process.env.NEXT_PUBLIC_BASE_URL}/${project?.image}`}
-                alt={project?.name}
-                width={300}
-                height={300}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <div className="h-[40%]">
-              <h4>{project?.name}</h4>
-              <p>{Truncate(project?.desc, 16)}</p>
-              <div className="flex items-center gap-2">
-                <FiEdit
-                  className="text-primary-100"
-                  onClick={() => {
-                    setSelectedItem(project), setShowUpdate(true);
-                  }}
-                />
-                <MdDelete
-                  className="text-red-500"
-                  onClick={() => deleteProject(project?._id)}
+    <Fragment>
+      <div className="w-[95%] mx-auto relative mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-start gap-4 mb-4">
+        {loading && <p>Loading...</p>}
+        {projects &&
+          projects?.docs?.map((project: any) => (
+            <div key={project?._id}>
+              <div className="h-[250px] overflow-y-hidden">
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_URL}/${project?.image}`}
+                  alt={project?.name}
+                  width={300}
+                  height={300}
+                  className="h-full w-full object-cover"
                 />
               </div>
+              <div className="h-[40%]">
+                <h4>{project?.name}</h4>
+                <p>{Truncate(project?.desc, 16)}</p>
+                <div className="flex items-center gap-2">
+                  <FiEdit
+                    className="text-primary-100"
+                    onClick={() => {
+                      setSelectedItem(project), setShowUpdate(true);
+                    }}
+                  />
+                  <MdDelete
+                    className="text-red-500"
+                    onClick={() => deleteProject(project?._id)}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
-      <Presence>
-        {showUpdate && selectedItem && (
-          <UpdateProject
-            getProjects={getProjects}
-            item={selectedItem}
-            setShowUpdate={setShowUpdate}
+          ))}
+        <Presence>
+          {showUpdate && selectedItem && (
+            <UpdateProject
+              getProjects={getProjects}
+              item={selectedItem}
+              setShowUpdate={setShowUpdate}
+            />
+          )}
+        </Presence>
+      </div>
+      <div className="mb-16">
+        {projects && (
+          <ReactPaginate
+            breakLabel="..."
+            // nextLabel={<FaChevronCircleRight className="text-3xl" />}
+            nextLabel={">"}
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={projects?.totalPages}
+            // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
+            previousLabel={"<"}
+            renderOnZeroPageCount={null}
+            className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
           />
         )}
-      </Presence>
-    </div>
+      </div>
+    </Fragment>
   );
 };
 
