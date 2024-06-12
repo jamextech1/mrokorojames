@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { ErrorToast, SuccessToast } from "@/utils/toast-modals";
+import axios from "axios";
 
 const SignInPage = () => {
   const router = useRouter();
@@ -13,22 +14,29 @@ const SignInPage = () => {
     e.preventDefault();
     setLogging(true);
     try {
-      if (
-        email === process.env.NEXT_PUBLIC_EMAIL &&
-        password === process.env.NEXT_PUBLIC_PASSWORD
-      ) {
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/login`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (res.status === 200 || res.status === 201) {
+        SuccessToast(res.data?.message);
         Cookies.set("token", "true", {
           expires: 1,
           sameSite: "strict",
           secure: true,
         });
-        SuccessToast("Login Successful");
-        // router.replace("/add-project");
         window.location.href = "/add-project";
-      } else {
-        return ErrorToast("Wrong email or password");
       }
     } catch (error: any) {
+      console.log(error);
       ErrorToast("Someting went wrong");
     } finally {
       setLogging(false);
