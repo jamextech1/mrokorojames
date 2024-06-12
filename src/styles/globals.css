@@ -31,7 +31,7 @@ body {
 }
 
 .section-container {
-  @apply w-[90%] sm:w-[89%] mx-auto;
+  @apply w-[91%] sm:w-[89%] mx-auto;
 }
 
 .project-paginate li a {
@@ -42,7 +42,7 @@ body {
   @apply bg-primary-100 text-light-200;
 }
 .scrollbar-2::-webkit-scrollbar {
-  @apply w-[5px] !bg-transparent;
+  @apply w-[4.5px] !bg-transparent;
 }
 .scrollbar-2::-webkit-scrollbar-thumb {
   @apply rounded-full !bg-primary-100/45;
