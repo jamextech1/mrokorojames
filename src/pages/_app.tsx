@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
           type: "website",
           locale: "en_IE",
           url: "https://okorojames.vercel.app",
+          site_name: "Okoro James",
           siteName: "Okoro James",
           title: "Okoro James",
           description: "Okoro James's portfolio site",
@@ -36,14 +37,14 @@ export default function App({ Component, pageProps }: AppProps) {
               type: "image/jpeg",
             },
             {
-              url: "https://okorojames.vercel.app/site-preview.png",
+              url: "https://okorojames.netlify.app/site-preview.png",
               width: 900,
               height: 800,
               alt: "Og Image Alt Second",
               type: "image/jpeg",
             },
             { url: "https://okorojames.vercel.app/site-preview.png" },
-            { url: "https://okorojames.vercel.app/site-preview.png" },
+            { url: "https://okorojames.netlify.app/site-preview.png" },
           ],
         }}
         twitter={{
