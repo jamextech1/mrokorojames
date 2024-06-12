@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  @apply selection:bg-light-200/15;
+}
+
+body::-webkit-scrollbar {
+  @apply w-[7px] bg-transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-primary-100 rounded-full cursor-pointer;
+}
+
+body {
+  @apply bg-bgDark text-light-100 font-Calibre;
+}
+
+.section-container {
+  @apply w-[90%] sm:w-[89%] mx-auto;
+}
+
+.project-paginate li a {
+  @apply bg-light-200 text-dark-200 py-3 px-4 rounded-full font-semibold font-SF_Mono;
+}
+
+.project-paginate li a[aria-current="page"] {
+  @apply bg-primary-100 text-light-200;
+}
