@@ -23,7 +23,8 @@ const SignInPage = () => {
           secure: true,
         });
         SuccessToast("Login Successful");
-        router.push("/add-project");
+        // router.replace("/add-project");
+        window.location.href = "/add-project";
       } else {
         return ErrorToast("Wrong email or password");
       }

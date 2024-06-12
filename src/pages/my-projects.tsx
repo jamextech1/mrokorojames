@@ -46,7 +46,7 @@ const MyProjectsPage = () => {
             const stacks = project?.stacks?.split(",");
             return (
               <div
-                className="w-[90%] 376:w-[300px] rounded-md border-[2.5px] border-primary-100/50 overflow-hidden flex flex-col gap-4"
+                className="w-[90%] 376:w-[300px] h-[300px] overflow-y-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 overflow-hidden flex flex-col card-1 gap-4 cursor-pointer transition-all duration-300"
                 key={project._id}
               >
                 <Image
@@ -60,9 +60,7 @@ const MyProjectsPage = () => {
                   <h3 className="text-lg font-semibold text-light-200">
                     {Truncate(project?.name, 30)}
                   </h3>
-                  <p className="text-light-200">
-                    {Truncate(project?.desc, 50)}
-                  </p>
+                  <p className="text-light-200">{project?.desc}</p>
                   <div className="flex items-center flex-wrap gap-2 mb-4">
                     {stacks?.map((stack: any) => (
                       <span
@@ -73,7 +71,7 @@ const MyProjectsPage = () => {
                       </span>
                     ))}
                   </div>
-                  <div className="flex items-center gap-2 text-light-200 text-2xl mt-auto">
+                  <div className="flex items-center gap-2 text-light-200 text-2xl mt-auto pb-5">
                     <Link href={project?.link} target="_blank">
                       <FiExternalLink />
                     </Link>
