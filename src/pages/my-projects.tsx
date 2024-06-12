@@ -16,7 +16,7 @@ const MyProjectsPage = () => {
   const page = searchParams.get("page") || 1;
   const limit = searchParams.get("limit") || 6;
   const { data: projects, isLoading: loading } = useQuery({
-    queryKey: ["projects"],
+    queryKey: ["projects", page, limit],
     queryFn: async () => {
       const res = await axios.get(
         `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
