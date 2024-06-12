@@ -23,14 +23,14 @@ export const SecondSection = () => {
         <div>
           <p className="leading-[26px] tracking-wide text-light-200">
             Hello!, My name is Okoro James, I&apos;ve always been passionate
-            about building problem solving wen applications, my interest in Web
+            about building problem solving web applications, my interest in Web
             developement started in 2019, when I learned that I can actually
             learn and build Amazing web applications, so, I started with the
-            basics, watching youtube Videos and reading articles, whilst
+            basics, watching youtube Videos and reading articles, while
             practicing what i learnt, fast forward to today, I have started
             building a fulltime scalable, Web applications and have acquired so
-            much new skills and knowledge, with my 3+ years of experience
-            working with Clients and Companies.
+            much new skills and knowledge, with my 3+ years of experience in my
+            Web development career, working with Clients and Companies.
           </p>
           {/*  */}
           <div className="flex flex-col gap-2 mt-2">
