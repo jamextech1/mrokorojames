@@ -13,8 +13,8 @@ export const FirstSection = () => {
         </p>
         <p className="text-base md:text-lg text-light-300">
           I specialize in building responsive and scalable web applications, and
-          <br />I love to solve problems, and I&apos;m always looking for new
-          challenges.
+          <br />I love to use my skill to build problem solving web apps, and
+          I&apos;m open to acquire new knowledge in the web development field.
         </p>
         <Link
           href="/my-cv/OkoroJames_FrontendDeveloperCV.pdf"
