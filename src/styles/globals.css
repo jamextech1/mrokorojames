@@ -41,3 +41,13 @@ body {
 .project-paginate li a[aria-current="page"] {
   @apply bg-primary-100 text-light-200;
 }
+.scrollbar-2::-webkit-scrollbar {
+  @apply w-[5px] !bg-transparent;
+}
+.scrollbar-2::-webkit-scrollbar-thumb {
+  @apply rounded-full !bg-primary-100/45;
+}
+
+.card-1:hover {
+  transform: rotateX(28deg);
+}
