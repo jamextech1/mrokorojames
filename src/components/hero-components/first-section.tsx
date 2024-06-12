@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const FirstSection = () => {
   return (
     <section className="mt-6 section-container">
@@ -14,12 +16,13 @@ export const FirstSection = () => {
           <br />I love to solve problems, and I&apos;m always looking for new
           challenges.
         </p>
-        <a
+        <Link
           href="/my-cv/OkoroJames_FrontendDeveloperCV.pdf"
           className="self-start shadow-[0_0_0_1.3px] shadow-primary-200 px-4 py-2 rounded-md"
+          target="_blank"
         >
           Download Resume
-        </a>
+        </Link>
       </div>
     </section>
   );

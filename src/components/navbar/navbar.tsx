@@ -1,4 +1,5 @@
-import { Ma, Mdiv, Mlink, Presence } from "@/utils/motion-exports";
+"use client";
+import { Mdiv, Mlink, Presence } from "@/utils/motion-exports";
 import Image from "next/image";
 import { useState } from "react";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
@@ -30,7 +31,7 @@ export const Navbar = () => {
         href="/#"
         className="h-[55px] w-[55px] bg-dark-100 flex justify-center items-center rounded-full"
       >
-        <Image src="/logo3.png" width={50} height={50} alt="logo" />
+        <Image src="/logo3.png" width={50} height={50} alt="logo3" />
       </Mlink>
       <div
         className="block 680:hidden shadow-[0_0_0_1.5px] shadow-primary-100 rounded-md p-[6px] cursor-pointer"
@@ -89,7 +90,7 @@ export const Navbar = () => {
         >
           Contact
         </Mlink>
-        <Ma
+        <Mlink
           variants={itemVariants}
           whileHover={{
             scale: 0.95,
@@ -100,9 +101,10 @@ export const Navbar = () => {
           }}
           href="/my-cv/OkoroJames_FrontendDeveloperCV.pdf"
           className="shadow-[0_0_0_1.3px] shadow-primary-200 px-4 py-2 rounded-md"
+          target="_blank"
         >
           Resume
-        </Ma>
+        </Mlink>
       </Mdiv>
       {/* Mobile menu */}
       <Presence>

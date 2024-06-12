@@ -33,3 +33,11 @@ body {
 .section-container {
   @apply w-[90%] sm:w-[89%] mx-auto;
 }
+
+.project-paginate li a {
+  @apply bg-light-200 text-dark-200 py-3 px-4 rounded-full font-semibold font-SF_Mono;
+}
+
+.project-paginate li a[aria-current="page"] {
+  @apply bg-primary-100 text-light-200;
+}

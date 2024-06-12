@@ -1,50 +1,48 @@
+"use client";
 import { Truncate } from "@/utils/truncate";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { IoLogoGithub } from "react-icons/io";
+import ReactPaginate from "react-paginate";
 
-export const FourthSection = () => {
-  const {
-    data: projects,
-    isLoading: loading,
-    refetch: getProjects,
-  } = useQuery({
+const MyProjectsPage = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const page = searchParams.get("page") || 1;
+  const limit = searchParams.get("limit") || 6;
+  const { data: projects, isLoading: loading } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
       );
       return res.data?.data;
     },
   });
   //
-  const topRatedProjects = useMemo(() => {
-    if (projects) {
-      return projects?.docs.filter((project: any) => project.topRated);
-    }
-  }, [projects]);
-
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    const params = new URLSearchParams();
+    const page = selected + 1;
+    params.append("page", page.toString());
+    router.push(`/my-projects?${params.toString()}`);
+  };
   //
   return (
-    <div id="projects" className="mt-16 section-container">
-      <div className="flex gap-2 items-center select-none">
-        <p className="text-xl md:text-2xl text-primary-100 font-SF_Mono">03.</p>
-        <div>
-          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-light-200 font-semibold">
-            Projects
-          </h3>
-          <p className="text-sm text-light-200">projects i&apos;ve worked on</p>
-        </div>
-        <div className="hidden 340:block w-[90px] 380:w-[150px] h-[2px] bg-primary-100/30" />
+    <div className="mb-[80px]">
+      <div className="flex justify-center items-center">
+        <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-light-200 font-semibold">
+          All My Projects
+        </h3>
       </div>
-      {/* top rated projects */}
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-center items-stretch gap-6 mt-6 mb-4">
+      {/*  */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-stretch gap-6 mt-10 mb-10">
         {projects &&
-          topRatedProjects?.slice(0, 4)?.map((project: any) => {
+          projects?.docs?.map((project: any) => {
             const stacks = project?.stacks?.split(",");
             return (
               <div
@@ -88,12 +86,22 @@ export const FourthSection = () => {
             );
           })}
       </div>
-      <Link
-        href={"/my-projects"}
-        className="w-[150px] mx-auto flex justify-center items-center text-center text-primary-100 bg-bgDark shadow-[0_0_0_1.5px] shadow-primary-100 px-4 py-3 rounded-md"
-      >
-        More Projects
-      </Link>
+      {projects && (
+        <ReactPaginate
+          breakLabel="..."
+          // nextLabel={<FaChevronCircleRight className="text-3xl" />}
+          nextLabel={">"}
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={projects?.totalPages}
+          // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
+          previousLabel={"<"}
+          renderOnZeroPageCount={null}
+          className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
+        />
+      )}
     </div>
   );
 };
+
+export default MyProjectsPage;

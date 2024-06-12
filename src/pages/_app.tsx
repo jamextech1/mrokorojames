@@ -1,8 +1,11 @@
 import { Navbar } from "@/components/navbar/navbar";
+import { QueryProvider } from "@/providers/query-provider";
 import "@/styles/globals.css";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
 import { Fragment } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -26,21 +29,21 @@ export default function App({ Component, pageProps }: AppProps) {
           },
           images: [
             {
-              url: "https://www.example.ie/og-image-01.jpg",
+              url: "https://okorojames.vercel.app/site-preview.png",
               width: 800,
               height: 600,
               alt: "Og Image Alt",
               type: "image/jpeg",
             },
             {
-              url: "https://www.example.ie/og-image-02.jpg",
+              url: "https://okorojames.vercel.app/site-preview.png",
               width: 900,
               height: 800,
               alt: "Og Image Alt Second",
               type: "image/jpeg",
             },
-            { url: "https://www.example.ie/og-image-03.jpg" },
-            { url: "https://www.example.ie/og-image-04.jpg" },
+            { url: "https://okorojames.vercel.app/site-preview.png" },
+            { url: "https://okorojames.vercel.app/site-preview.png" },
           ],
         }}
         twitter={{
@@ -50,7 +53,10 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <Navbar />
-      <Component {...pageProps} />
+      <QueryProvider>
+        <ToastContainer />
+        <Component {...pageProps} />
+      </QueryProvider>
     </Fragment>
   );
 }

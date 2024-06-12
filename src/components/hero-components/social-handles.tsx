@@ -25,7 +25,7 @@ export const SocialHandles = () => {
       variants={containerVariants}
       initial="hidden"
       animate="show"
-      className="fixed -bottom-2 left-2 flex flex-col gap-6 z-40"
+      className="fixed -bottom-2 left-[3px] flex flex-col gap-6 z-40"
     >
       <Mlink
         variants={itemVariants}

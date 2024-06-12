@@ -6,3 +6,4 @@ export const Mdiv = motion.div;
 export const Presence = AnimatePresence;
 export const Mlink = motion(Link);
 export const Ma = motion.a;
+export const Mform = motion.form;

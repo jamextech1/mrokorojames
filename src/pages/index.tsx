@@ -1,3 +1,4 @@
+import { FifthSection } from "@/components/hero-components/fifth-section";
 import { FirstSection } from "@/components/hero-components/first-section";
 import { FourthSection } from "@/components/hero-components/fourth-section";
 import { SecondSection } from "@/components/hero-components/second-section";
@@ -15,6 +16,8 @@ export default function Home() {
       <ThirdSection />
       {/*  */}
       <FourthSection />
+      {/*  */}
+      <FifthSection />
       {/*  */}
       <SocialHandles />
     </main>
