@@ -27,10 +27,10 @@ const ProjectsPage = () => {
     isLoading: loading,
     refetch: getProjects,
   } = useQuery({
-    queryKey: ["projects"],
+    queryKey: ["projects", page, limit],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
       );
       return res.data?.data;
     },
