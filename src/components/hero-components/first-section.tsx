@@ -14,6 +14,7 @@ export const FirstSection = () => {
         <p className="text-base md:text-lg text-light-300">
           I specialize in building responsive and scalable web applications, and
           <br />I love to use my skill to build problem solving web apps, and
+          <br />
           I&apos;m open to acquire new knowledge in the web development field.
         </p>
         <Link
