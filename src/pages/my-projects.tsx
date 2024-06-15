@@ -1,4 +1,5 @@
 "use client";
+import { Ids, IdsType } from "@/utils/ids";
 import { Truncate } from "@/utils/truncate";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -41,6 +42,21 @@ const MyProjectsPage = () => {
       </div>
       {/*  */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-stretch gap-6 mt-10 mb-10">
+        {loading &&
+          Ids.map((id: IdsType) => (
+            <div
+              className="w-[90%] 376:w-[300px] h-[300px] overflow-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 flex flex-col gap-4 animate-pulse"
+              key={id?.id}
+            >
+              <div className="w-full h-64 bg-primary-100/30" />
+              <div className="flex flex-col gap-5 p-3 h-full">
+                <h3 className="h-4 w-full bg-primary-100/30 rounded-md" />
+                <h3 className="h-3 w-full bg-primary-100/30 rounded-md" />
+                <h3 className="h-5 w-[90%] bg-primary-100/30 rounded-md" />
+                <h3 className="h-3 w-[60%] bg-primary-100/30 rounded-md" />
+              </div>
+            </div>
+          ))}
         {projects &&
           projects?.docs?.map((project: any) => {
             const stacks = project?.stacks?.split(",");
