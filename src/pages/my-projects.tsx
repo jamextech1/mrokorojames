@@ -66,7 +66,7 @@ const MyProjectsPage = () => {
                 key={project._id}
               >
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_URL}/${project?.image}`}
+                  src={project.image}
                   alt={project?.name}
                   width={500}
                   height={500}
