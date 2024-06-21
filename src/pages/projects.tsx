@@ -62,7 +62,7 @@ const ProjectsPage = () => {
   return (
     <Fragment>
       <div className="w-[95%] mx-auto relative mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-start gap-4 mb-4">
-         {loading &&
+        {loading &&
           Ids.map((id: IdsType) => (
             <div
               className="w-[90%] 376:w-[300px] h-[300px] overflow-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 flex flex-col gap-4 animate-pulse"
@@ -82,7 +82,7 @@ const ProjectsPage = () => {
             <div key={project?._id}>
               <div className="h-[250px] overflow-y-hidden">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_URL}/${project?.image}`}
+                  src={project?.image}
                   alt={project?.name}
                   width={300}
                   height={300}

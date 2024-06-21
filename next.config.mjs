@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   // image hosts
   images: {
-    domains: ["portfolio-server-production-c601.up.railway.app"],
+    domains: [
+      "portfolio-server-production-c601.up.railway.app",
+      "res.cloudinary.com",
+    ],
   },
 };
 
