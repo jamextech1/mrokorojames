@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Cookies from "js-cookie";
+import { redirect } from "next/navigation";
 const AddProject = () => {
   //
   const [saving, setSaving] = useState<boolean>(false);
@@ -29,7 +30,10 @@ const AddProject = () => {
     setSaving(true);
     const isAuth = Cookies.get("token");
     if (!image) return ErrorToast("Please select an image");
-    if (!isAuth) return ErrorToast("Please login first");
+    // redirect if not authenticated
+    if (!isAuth) {
+      redirect("/login");
+    }
     try {
       const formData = new FormData();
       formData.append("name", data.name);
