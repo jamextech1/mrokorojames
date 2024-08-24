@@ -21,6 +21,7 @@ const SignInPage = () => {
           headers: {
             "Content-Type": "application/json",
           },
+          withCredentials: true,
         }
       );
       if (res.status === 200 || res.status === 201) {
