@@ -5,7 +5,6 @@ import { ErrorToast, SuccessToast } from "@/utils/toast-modals";
 import axios from "axios";
 
 const SignInPage = () => {
-  const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [logging, setLogging] = useState<boolean>(false);
@@ -28,11 +27,6 @@ const SignInPage = () => {
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast(res.data?.message);
-        Cookies.set("token", "true", {
-          expires: 1,
-          sameSite: "strict",
-          secure: true,
-        });
         window.location.href = "/add-project";
       }
     } catch (error: any) {
