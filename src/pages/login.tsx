@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Cookies from "js-cookie";
-import { useRouter } from "next/navigation";
 import { ErrorToast, SuccessToast } from "@/utils/toast-modals";
 import axios from "axios";
 
@@ -27,7 +25,7 @@ const SignInPage = () => {
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast(res.data?.message);
-        window.location.href = "/add-project";
+        // window.location.href = "/add-project";
       }
     } catch (error: any) {
       console.log(error);
