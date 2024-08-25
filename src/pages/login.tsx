@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ErrorToast, SuccessToast } from "@/utils/toast-modals";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const SignInPage = () => {
   const [email, setEmail] = useState<string>("");
@@ -14,20 +15,14 @@ const SignInPage = () => {
       const formData = new FormData();
       formData.append("email", email);
       formData.append("password", password);
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/login`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            // "Access-Control-Allow-Origin": "*",
-          },
-          withCredentials: true,
-        }
-      );
+      const res = await axios.post("/api/login", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (res.status === 200 || res.status === 201) {
         SuccessToast(res.data?.message);
-        // window.location.href = "/add-project";
+        window.location.href = "/add-project";
       }
     } catch (error: any) {
       console.log(error);
