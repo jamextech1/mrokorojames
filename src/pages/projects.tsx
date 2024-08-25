@@ -32,12 +32,6 @@ const ProjectsPage = () => {
     queryFn: async () => {
       const res = await axios.get(
         `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          withCredentials: true,
-        }
       );
       return res.data?.data;
     },
@@ -47,12 +41,6 @@ const ProjectsPage = () => {
     try {
       const res = await axios.delete(
         `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${id}`,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          withCredentials: true,
-        }
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project deleted successfully");
@@ -198,13 +186,7 @@ export const UpdateProject = ({
       if (image) formData.append("image", image);
       const res = await axios.patch(
         `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${item?._id}`,
-        formData,
-        {
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
-          withCredentials: true,
-        }
+        formData
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project created successfully");
