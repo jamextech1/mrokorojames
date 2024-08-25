@@ -17,7 +17,13 @@ export const FourthSection = () => {
     queryKey: ["projects"],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          withCredentials: true,
+        }
       );
       return res.data?.data;
     },
