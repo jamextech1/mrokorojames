@@ -45,7 +45,13 @@ const AddProject = () => {
       if (image) formData.append("image", image);
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`,
-        formData
+        formData,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          withCredentials: true,
+        }
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project created successfully");

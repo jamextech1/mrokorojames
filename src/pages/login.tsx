@@ -20,13 +20,14 @@ const SignInPage = () => {
         {
           headers: {
             "Content-Type": "application/json",
+            // "Access-Control-Allow-Origin": "*",
           },
           withCredentials: true,
         }
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast(res.data?.message);
-        window.location.href = "/add-project";
+        // window.location.href = "/add-project";
       }
     } catch (error: any) {
       console.log(error);

@@ -6,7 +6,6 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { IoLogoGithub } from "react-icons/io";
 import ReactPaginate from "react-paginate";
@@ -20,7 +19,13 @@ const MyProjectsPage = () => {
     queryKey: ["projects", page, limit],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`,
+        {
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          withCredentials: true,
+        }
       );
       return res.data?.data;
     },
