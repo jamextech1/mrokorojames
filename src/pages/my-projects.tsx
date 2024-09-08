@@ -8,22 +8,30 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FiExternalLink } from "react-icons/fi";
 import { IoLogoGithub } from "react-icons/io";
-import ReactPaginate from "react-paginate";
 
 const MyProjectsPage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = searchParams.get("page") || 1;
   const limit = searchParams.get("limit") || 6;
+  const currPage = parseInt(searchParams.get("page") || "1", 10);
   const { data: projects, isLoading: loading } = useQuery({
     queryKey: ["projects", page, limit],
     queryFn: async () => {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
-      );
+      const res = await axios.get("/api/get-projects");
       return res.data?.data;
     },
   });
+  // paginate data
+  // the start index endIndex and currentData settings
+  const startIndex = (Number(page) - 1) * Number(limit);
+  const endIndex = Number(page) * Number(limit);
+  const currentData = projects?.slice(startIndex, endIndex);
+  // where we create the list of all the pagination numbers
+  const paginationNumbers = [];
+  for (let i = 1; i <= Math.ceil(projects?.length / Number(limit)); i++) {
+    paginationNumbers.push(i);
+  }
   //
   const handlePageClick = ({ selected }: { selected: number }) => {
     const params = new URLSearchParams();
@@ -57,7 +65,7 @@ const MyProjectsPage = () => {
             </div>
           ))}
         {projects &&
-          projects?.docs?.map((project: any) => {
+          currentData?.map((project: any) => {
             const stacks = project?.stacks?.split(",");
             return (
               <div
@@ -100,18 +108,33 @@ const MyProjectsPage = () => {
           })}
       </div>
       {projects && (
-        <ReactPaginate
-          breakLabel="..."
-          // nextLabel={<FaChevronCircleRight className="text-3xl" />}
-          nextLabel={">"}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={5}
-          pageCount={projects?.totalPages}
-          // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
-          previousLabel={"<"}
-          renderOnZeroPageCount={null}
-          className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
-        />
+        // <ReactPaginate
+        //   breakLabel="..."
+        //   // nextLabel={<FaChevronCircleRight className="text-3xl" />}
+        //   nextLabel={">"}
+        //   onPageChange={handlePageClick}
+        //   pageRangeDisplayed={5}
+        //   pageCount={Math.ceil(projects?.length / Number(limit))}
+        //   // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
+        //   previousLabel={"<"}
+        //   renderOnZeroPageCount={null}
+        //   className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
+        // />
+        <div className="flex items-center justify-center flex-wrap gap-2">
+          {paginationNumbers.map((number) => (
+            <button
+              key={number}
+              onClick={() => handlePageClick({ selected: number - 1 })}
+              className={`${
+                currPage === number
+                  ? "bg-primary-200 text-light-200"
+                  : "bg-light-100 text-light-300"
+              } px-3 py-1 rounded-md`}
+            >
+              {number}
+            </button>
+          ))}
+        </div>
       )}
     </div>
   );

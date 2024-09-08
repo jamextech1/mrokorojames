@@ -16,9 +16,7 @@ export const FourthSection = () => {
   } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`
-      );
+      const res = await axios.get("/api/get-projects");
       return res.data?.data;
     },
   });
