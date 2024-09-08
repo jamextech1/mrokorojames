@@ -31,7 +31,7 @@ const ProjectsPage = () => {
     queryKey: ["projects", page, limit],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
       );
       return res.data?.data;
     },
@@ -40,7 +40,7 @@ const ProjectsPage = () => {
   const deleteProject = async (id: any) => {
     try {
       const res = await axios.delete(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${id}`
       );
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project deleted successfully");
