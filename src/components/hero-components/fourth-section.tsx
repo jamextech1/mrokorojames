@@ -23,7 +23,7 @@ export const FourthSection = () => {
   //
   const topRatedProjects = useMemo(() => {
     if (projects) {
-      return projects?.docs.filter((project: any) => project.topRated);
+      return projects?.filter((project: any) => project?.topRated);
     }
   }, [projects]);
 
