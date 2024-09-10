@@ -61,7 +61,7 @@ const ProjectsPage = () => {
 
   return (
     <Fragment>
-      <div className="w-[95%] mx-auto relative mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-start gap-4 mb-4">
+      <div className="max-w-[1440px] mx-auto w-[95%] relative mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center items-start gap-4 mb-4">
         {loading &&
           Ids.map((id: IdsType) => (
             <div
@@ -79,7 +79,7 @@ const ProjectsPage = () => {
           ))}
         {projects &&
           projects?.docs?.map((project: any) => (
-            <div key={project?._id}>
+            <div key={project?.id}>
               <div className="h-[250px] overflow-y-hidden">
                 <Image
                   src={project?.image}
@@ -101,7 +101,7 @@ const ProjectsPage = () => {
                   />
                   <MdDelete
                     className="text-red-500"
-                    onClick={() => deleteProject(project?._id)}
+                    onClick={() => deleteProject(project?.id)}
                   />
                 </div>
               </div>
@@ -117,7 +117,7 @@ const ProjectsPage = () => {
           )}
         </Presence>
       </div>
-      <div className="mb-16">
+      <div className="mb-16 max-w-[1440px] mx-auto">
         {projects && (
           <ReactPaginate
             breakLabel="..."
@@ -185,7 +185,7 @@ export const UpdateProject = ({
       formData.append("stacks", data.stacks);
       if (image) formData.append("image", image);
       const res = await axios.patch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${item?._id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${item?.id}`,
         formData
       );
       if (res.status === 200 || res.status === 201) {
