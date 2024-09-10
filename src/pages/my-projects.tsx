@@ -41,7 +41,7 @@ const MyProjectsPage = () => {
   };
   //
   return (
-    <div className="mb-[80px]">
+    <div className="max-w-[1440px] mx-auto mb-[80px]">
       <div className="flex justify-center items-center">
         <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-light-200 font-semibold">
           All My Projects
@@ -70,7 +70,7 @@ const MyProjectsPage = () => {
             return (
               <div
                 className="w-[90%] 376:w-[300px] h-[300px] overflow-y-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 overflow-hidden flex flex-col card-1 gap-4 cursor-pointer transition-all duration-300"
-                key={project._id}
+                key={project.id}
               >
                 <Image
                   src={project.image}

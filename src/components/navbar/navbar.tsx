@@ -24,7 +24,7 @@ export const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   //
   return (
-    <nav className="sticky top-0 left-0 w-full bg-bgDark/10 backdrop-blur-sm flex items-center justify-between py-5 px-6 sm:px-[30px] md:px-12 gap-4 z-[899]">
+    <nav className="max-w-[1440px] mx-auto sticky top-0 left-0 w-full bg-bgDark/10 backdrop-blur-sm flex items-center justify-between py-5 px-6 sm:px-[30px] md:px-12 gap-4 z-[899]">
       <Mlink
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
