@@ -8,13 +8,14 @@ export default async function handler(
   if (req.method === "POST") {
     try {
       const { email, password } = req.body;
-      const response = await axios.post(
-        "https://portfolio-server-47si.onrender.com/okorojames/login",
-        { email, password }
-      );
-      const { token } = response.data;
+      if (email !== process.env.EMAIL && password !== process.env.PASSWORD) {
+        res.status(401).json({ message: "Invalid credentials" });
+        return;
+      }
       res.setHeader("Set-Cookie", [
-        `token=${token}; Path=/; HttpOnly; Secure; SameSite=Strict; Expires=${new Date(
+        `token=${new Date(
+          Date.now() + 24 * 60 * 60 * 1000
+        ).toUTCString()}; Path=/; HttpOnly; Secure; SameSite=Strict; Expires=${new Date(
           Date.now() + 24 * 60 * 60 * 1000 // 1 day
         )}; priority=High`,
       ]);

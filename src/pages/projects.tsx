@@ -7,11 +7,9 @@ import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEdit } from "react-icons/fi";
 import { MdDelete } from "react-icons/md";
-import Cookies from "js-cookie";
 import { Presence } from "@/utils/motion-exports";
 import { RxCross2 } from "react-icons/rx";
 import { useRouter, useSearchParams } from "next/navigation";
-import ReactPaginate from "react-paginate";
 import { Ids, IdsType } from "../utils/ids";
 
 const ProjectsPage = () => {
@@ -22,7 +20,7 @@ const ProjectsPage = () => {
   const router = useRouter();
   const page = searchParams.get("page") || 1;
   const limit = searchParams.get("limit") || 6;
-  //
+  const currPage = parseInt(searchParams.get("page") || "1", 10);
   const {
     data: projects,
     isLoading: loading,
@@ -30,18 +28,32 @@ const ProjectsPage = () => {
   } = useQuery({
     queryKey: ["projects", page, limit],
     queryFn: async () => {
-      const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project?page=${page}&limit=${limit}`
-      );
+      const res = await axios.get("/api/get-projects");
       return res.data?.data;
     },
+    select: (data) => data,
   });
+  // paginate data
+  // the start index endIndex and currentData settings
+  const startIndex = (Number(page) - 1) * Number(limit);
+  const endIndex = Number(page) * Number(limit);
+  const currentData = projects?.slice(startIndex, endIndex);
+  // where we create the list of all the pagination numbers
+  const paginationNumbers = [];
+  for (let i = 1; i <= Math.ceil(projects?.length / Number(limit)); i++) {
+    paginationNumbers.push(i);
+  }
+  //
+  const handlePageClick = ({ selected }: { selected: number }) => {
+    const params = new URLSearchParams();
+    const page = selected + 1;
+    params.append("page", page.toString());
+    router.push(`/my-projects?${params.toString()}`);
+  };
   //
   const deleteProject = async (id: any) => {
     try {
-      const res = await axios.delete(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${id}`
-      );
+      const res = await axios.delete(`/api/delete-prosject-oi?id=${id}`);
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project deleted successfully");
         await getProjects();
@@ -51,12 +63,6 @@ const ProjectsPage = () => {
     }
   };
   //
-  const handlePageClick = ({ selected }: { selected: number }) => {
-    const params = new URLSearchParams();
-    const page = selected + 1;
-    params.append("page", page.toString());
-    router.push(`/projects?${params.toString()}`);
-  };
   //
 
   return (
@@ -78,8 +84,8 @@ const ProjectsPage = () => {
             </div>
           ))}
         {projects &&
-          projects?.docs?.map((project: any) => (
-            <div key={project?.id}>
+          currentData?.map((project: any) => (
+            <div key={project?._id}>
               <div className="h-[250px] overflow-y-hidden">
                 <Image
                   src={project?.image}
@@ -101,7 +107,7 @@ const ProjectsPage = () => {
                   />
                   <MdDelete
                     className="text-red-500"
-                    onClick={() => deleteProject(project?.id)}
+                    onClick={() => deleteProject(project?._id)}
                   />
                 </div>
               </div>
@@ -119,18 +125,33 @@ const ProjectsPage = () => {
       </div>
       <div className="mb-16 max-w-[1440px] mx-auto">
         {projects && (
-          <ReactPaginate
-            breakLabel="..."
-            // nextLabel={<FaChevronCircleRight className="text-3xl" />}
-            nextLabel={">"}
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={projects?.totalPages}
-            // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
-            previousLabel={"<"}
-            renderOnZeroPageCount={null}
-            className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
-          />
+          // <ReactPaginate
+          //   breakLabel="..."
+          //   // nextLabel={<FaChevronCircleRight className="text-3xl" />}
+          //   nextLabel={">"}
+          //   onPageChange={handlePageClick}
+          //   pageRangeDisplayed={5}
+          //   pageCount={projects?.totalPages}
+          //   // previousLabel={<FaChevronCircleLeft className="text-3xl" />}
+          //   previousLabel={"<"}
+          //   renderOnZeroPageCount={null}
+          //   className="project-paginate flex items-center justify-center flex-wrap gap-2 mt-7"
+          // />
+          <div className="flex items-center justify-center flex-wrap gap-2">
+            {paginationNumbers.map((number) => (
+              <button
+                key={number}
+                onClick={() => handlePageClick({ selected: number - 1 })}
+                className={`${
+                  currPage === number
+                    ? "bg-primary-200 text-light-200"
+                    : "bg-light-100 text-light-300"
+                } px-3 py-1 rounded-md`}
+              >
+                {number}
+              </button>
+            ))}
+          </div>
         )}
       </div>
     </Fragment>
@@ -149,6 +170,15 @@ export const UpdateProject = ({
   setShowUpdate: any;
   getProjects: () => Promise<QueryObserverResult<Error, unknown>>;
 }) => {
+  //
+  const toBase64 = async (file: any) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
   //
   const [saving, setSaving] = useState<boolean>(false);
   const [image, setImage] = useState<any>(null);
@@ -173,19 +203,24 @@ export const UpdateProject = ({
   //
   const createProject = async (data: any) => {
     setSaving(true);
-    const isAuth = Cookies.get("token");
-    if (!isAuth) return ErrorToast("Please login first");
     try {
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("desc", data.desc);
-      formData.append("topRated", data.topRated);
-      formData.append("link", data.link);
-      formData.append("github", data.github);
-      formData.append("stacks", data.stacks);
-      if (image) formData.append("image", image);
+      // let formData = {};
+      // if (image) {
+      //   formData = {
+      //     ...data,
+      //     image: await toBase64(image),
+      //   };
+      // } else {
+      //   formData = {
+      //     ...data,
+      //   };
+      // }
+      const formData = {
+        ...data,
+        image: image ? await toBase64(image) : item?.image,
+      };
       const res = await axios.patch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project/${item?.id}`,
+        `/api/up-edit-prosject?id=${item?._id}`,
         formData
       );
       if (res.status === 200 || res.status === 201) {

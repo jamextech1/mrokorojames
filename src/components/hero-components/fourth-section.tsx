@@ -90,10 +90,20 @@ export const FourthSection = () => {
                     ))}
                   </div>
                   <div className="flex items-center gap-2 text-light-200 text-2xl mt-auto pb-5">
-                    <Link href={project?.link} target="_blank">
+                    <Link
+                      className="flex text-sm gap-1 items-center"
+                      href={project?.link}
+                      target="_blank"
+                    >
+                      <div className="mt-1">Visit</div>
                       <FiExternalLink />
                     </Link>
-                    <Link href={project?.github} target="_blank">
+                    <Link
+                      className="flex text-sm gap-1 items-center"
+                      href={project?.github}
+                      target="_blank"
+                    >
+                      <div className="mt-1">Github</div>
                       <IoLogoGithub />
                     </Link>
                   </div>

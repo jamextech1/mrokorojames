@@ -70,7 +70,7 @@ const MyProjectsPage = () => {
             return (
               <div
                 className="w-[90%] 376:w-[300px] h-[300px] overflow-y-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 overflow-hidden flex flex-col card-1 gap-4 cursor-pointer transition-all duration-300"
-                key={project.id}
+                key={project._id}
               >
                 <Image
                   src={project.image}
@@ -95,10 +95,20 @@ const MyProjectsPage = () => {
                     ))}
                   </div>
                   <div className="flex items-center gap-2 text-light-200 text-2xl mt-auto pb-5">
-                    <Link href={project?.link} target="_blank">
+                    <Link
+                      className="flex text-sm gap-1 items-center"
+                      href={project?.link}
+                      target="_blank"
+                    >
+                      <div className="mt-1">Visit</div>
                       <FiExternalLink />
                     </Link>
-                    <Link href={project?.github} target="_blank">
+                    <Link
+                      className="flex text-sm gap-1 items-center"
+                      href={project?.github}
+                      target="_blank"
+                    >
+                      <div className="mt-1">Github</div>
                       <IoLogoGithub />
                     </Link>
                   </div>
