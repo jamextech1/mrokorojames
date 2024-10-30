@@ -2,12 +2,19 @@ import { ErrorToast, SuccessToast } from "@/utils/toast-modals";
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Cookies from "js-cookie";
-import { redirect } from "next/navigation";
 const AddProject = () => {
   //
   const [saving, setSaving] = useState<boolean>(false);
   const [image, setImage] = useState<any>(null);
+  //
+  const toBase64 = async (file: any) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+  };
   //
   const {
     register,
@@ -28,25 +35,14 @@ const AddProject = () => {
   //
   const createProject = async (data: any) => {
     setSaving(true);
-    const isAuth = Cookies.get("token");
     if (!image) return ErrorToast("Please select an image");
-    // redirect if not authenticated
-    if (!isAuth) {
-      redirect("/login");
-    }
     try {
-      const formData = new FormData();
-      formData.append("name", data.name);
-      formData.append("desc", data.desc);
-      formData.append("topRated", data.topRated);
-      formData.append("link", data.link);
-      formData.append("github", data.github);
-      formData.append("stacks", data.stacks);
-      if (image) formData.append("image", image);
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/okorojames/project`,
-        formData
-      );
+      const img = await toBase64(image);
+      const formData = {
+        ...data,
+        image: img,
+      };
+      const res = await axios.post(`/api/new-project-s`, formData);
       if (res.status === 200 || res.status === 201) {
         SuccessToast("Project created successfully");
         reset();
