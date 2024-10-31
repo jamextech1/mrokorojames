@@ -63,7 +63,7 @@ export const FourthSection = () => {
             return (
               <div
                 className="w-[90%] 376:w-[300px] h-[300px] overflow-auto scrollbar-2 rounded-md border-[2.5px] border-primary-100/50 flex flex-col gap-4 cursor-pointer transition-all duration-300 card-1"
-                key={project.id}
+                key={project._id}
               >
                 <Image
                   src={project.image}

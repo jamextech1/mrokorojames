@@ -48,7 +48,7 @@ const ProjectsPage = () => {
     const params = new URLSearchParams();
     const page = selected + 1;
     params.append("page", page.toString());
-    router.push(`/my-projects?${params.toString()}`);
+    router.push(`?${params.toString()}`);
   };
   //
   const deleteProject = async (id: any) => {
